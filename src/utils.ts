@@ -61,7 +61,7 @@ const oneHour = 60 * 60;
 
 export const formatMs = (ms: number) => {
 	const wholeSeconds = (ms / 1000) | 0;
-	const milliseconds = `${ms.toPrecision(6)}ms`;
+	const milliseconds = `${(ms - (wholeSeconds * 1000)).toPrecision(6)}ms`;
 
 	if (wholeSeconds < 1) {
 		return milliseconds;
