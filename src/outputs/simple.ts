@@ -39,11 +39,9 @@ export class SimpleOutput extends Output {
 
 		console.log(`  Suite ${this.suite.definition.name} finished (${nowISO()})`);
 
-		if (this.requestsForCycle.length) {
-			const seconds = hrDuration(this.suite.hrDuration) / 1000;
+		const seconds = hrDuration(this.suite.hrDuration) / 1000;
 
-			this.outputSummary('Suite Summary', seconds, this.requests, true);
-		}
+		this.outputSummary('Suite Summary', seconds, this.requests, true);
 	};
 
 	public onPhaseStart = (phase: PhaseDefinition) => {

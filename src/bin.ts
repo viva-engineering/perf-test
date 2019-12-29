@@ -43,6 +43,8 @@ const run = async () => {
 
 	await suite.exec();
 	await output.flush();
+
+	process.exit(0);
 };
 
 const isSuite = (suite: any) : suite is Suite => {
